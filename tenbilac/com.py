@@ -10,7 +10,8 @@ All the info is in the config files, there are NO secret instance attributes wor
 
 """
 
-from ConfigParser import SafeConfigParser
+#from ConfigParser import SafeConfigParser
+import configparser
 import multiprocessing
 import os
 import shutil
@@ -47,7 +48,7 @@ class Tenbilac():
 		"""
 		
 		self.configpath = configpath
-		self.config = SafeConfigParser(allow_no_value=True)
+		self.config = configparser.ConfigParser(allow_no_value=True)
 		
 		
 		if os.path.isfile(configpath): # Then we just read it

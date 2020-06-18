@@ -4,7 +4,7 @@ http://stackoverflow.com/questions/3288595/multiprocessing-how-to-use-pool-map-o
 
 import multiprocessing
 from multiprocessing import Process, Pipe, Queue
-from itertools import izip  
+from itertools import zip_longest as zip  
 
 
 def spawn(f): 
@@ -25,7 +25,7 @@ def parmap(f, X, ncpu):
 	.. note:: It is very possible that multiprocessing.Pool is fixed in python3 
 	"""
 	pipe=[Pipe() for x in X]  
-	processes=[Process(target=spawn(f),args=(c,x)) for x,(p,c) in izip(X,pipe)]  
+	processes=[Process(target=spawn(f),args=(c,x)) for x,(p,c) in zip(X,pipe)]  
 	numProcesses = len(processes)  
 	processNum = 0  
 	outputList = []  

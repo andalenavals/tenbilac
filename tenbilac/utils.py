@@ -4,7 +4,7 @@ General helpers
 
 import numpy as np
 import os
-import cPickle as pickle
+import pickle
 import gzip
 
 
