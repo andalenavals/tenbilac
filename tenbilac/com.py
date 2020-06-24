@@ -479,7 +479,7 @@ class Tenbilac():
 		
 		# And we write the config.
 		configcopypath = os.path.join(destdir, self.name + ".cfg")
-		with open(configcopypath, 'wb') as configfile:
+		with open(configcopypath, 'w') as configfile:
 			self.config.write(configfile)
 		
 		logger.info("Done with minimizing.")
