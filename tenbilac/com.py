@@ -320,7 +320,7 @@ class Tenbilac():
 		if self.config.getboolean("setup", "copyconfig"):
 			configcopyname = self.name + "_" + datetimestr(startdt) + ".cfg"
 			configcopypath = os.path.join(self.workdir, configcopyname)
-			with open(configcopypath + "_running", 'wb') as configfile: # For now, we add this "_running". Will be removed when done.
+			with open(configcopypath + "_running", 'w') as configfile: # For now, we add this "_running". Will be removed when done.
 				self.config.write(configfile)
 			# No, we don't copy the file as (1) it might already have changed and (2) some options might have been passed as configlist.
 			#shutil.copy(self.configpath, configcopypath + "_running")
