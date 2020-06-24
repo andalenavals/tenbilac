@@ -262,7 +262,7 @@ class Traindata:
 		(nomaskinputs, outputsmask) = demask(inputs, no=targets.shape[0])
 		
 		# Checking the auxinputs
-		if auxinputs != None:
+		if (auxinputs is not None):
 			if auxinputs.ndim != 3:
 				raise ValueError("Please give me 3D auxinputs")
 			if auxinputs.shape[2] != inputs.shape[2] or auxinputs.shape[0] != inputs.shape[0]: # Checking for same number of cases and realizations
